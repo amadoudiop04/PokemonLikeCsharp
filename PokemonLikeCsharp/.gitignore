@@ -1,0 +1,4 @@
+﻿.vs/\nbin/\nobj/\n.dll\n.exe\n.pdb\n.user\n.DS_Store
+bin/
+obj/
+*.dll
