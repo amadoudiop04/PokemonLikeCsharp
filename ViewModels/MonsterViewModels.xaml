@@ -1,0 +1,71 @@
+﻿<Window
+    x:Class="PokemonLikeCsharp.ViewModels.MonsterViewModels"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:local="clr-namespace:PokemonLikeCsharp.ViewModels"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    Title="MonsterViewModels"
+    Width="800"
+    Height="450"
+    mc:Ignorable="d">
+    <Grid Background="gray">
+        <Label
+            Margin="10"
+            HorizontalAlignment="Center"
+            FontFamily="Comic Sans MS"
+            FontSize="25"
+            Foreground="White">
+            les Monstres disponibles
+        </Label>
+
+        <ListView
+            Width="500"
+            Height="250"
+            Margin="10"
+            ItemsSource="{Binding Monsters}">
+            <ListView.ItemTemplate>
+                <DataTemplate>
+                    <Border
+                        Margin="20"
+                        Padding="10"
+                        HorizontalAlignment="Center"
+                        VerticalAlignment="Center"
+                        Background="White"
+                        BorderBrush="#D3D3D3"
+                        BorderThickness="1"
+                        CornerRadius="10">
+                        <StackPanel Orientation="Horizontal">
+                            <Image
+                                Width="50"
+                                Height="auto"
+                                Source="../ressources/images/pokemon.jpg"
+                                Stretch="UniformToFill" />
+                            <StackPanel>
+                                <TextBlock
+                                    FontSize="16"
+                                    FontWeight="Bold"
+                                    Text="{Binding Name}" />
+                                <TextBlock Text="HP :" />
+                                <TextBlock FontWeight="SemiBold" Text="{Binding Health}" />
+                                <TextBlock Text="Sorts associés :" />
+                                <TextBlock Text="{Binding Spell}" />
+                                <ItemsControl ItemsSource="{Binding Spell}">
+                                    <ItemsControl.ItemTemplate>
+                                        <DataTemplate>
+                                            <TextBlock Margin="5,0" Text="{Binding Name}" />
+                                        </DataTemplate>
+                                    </ItemsControl.ItemTemplate>
+                                </ItemsControl>
+                            </StackPanel>
+
+                        </StackPanel>
+                    </Border>
+                </DataTemplate>
+            </ListView.ItemTemplate>
+
+        </ListView>
+    </Grid>
+</Window>
+
+

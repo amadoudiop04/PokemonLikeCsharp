@@ -1,0 +1,6 @@
+﻿.vs/\nbin/\nobj/\n.dll\n.exe\n.pdb\n.user\n.DS_Store
+bin/
+obj/
+*.dll
+.vs/
+.vs/PokemonLikeCsharp/FileContentIndex/39084ca4-1dac-4929-8bdb-27baffb4094f.vsidx

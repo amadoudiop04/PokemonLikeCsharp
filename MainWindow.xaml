@@ -1,0 +1,77 @@
+﻿<Window
+    x:Class="PokemonLikeCsharp.MainWindow"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    Title="MainWindow"
+    Width="800"
+    Height="450"
+    mc:Ignorable="d">
+    <Grid Background="#12131c">
+        <StackPanel
+            Width="350"
+            Margin="20"
+            HorizontalAlignment="Center"
+            VerticalAlignment="Center"
+            Background="Black">
+
+            <Image
+          
+                Width="50"
+                Height="50"
+                Margin="0,10"
+                HorizontalAlignment="Center"
+                Source="/Ressources/images/profile.png"
+                Stretch="Uniform" />
+
+
+            <TextBlock
+                Foreground="white"
+                Margin="10"
+                HorizontalAlignment="Center"
+                VerticalAlignment="Center"
+                FontSize="14"
+                Text="Username:" />
+            <TextBox
+                x:Name="UsernameBox"
+                Width="250"
+                Margin="0,0,0,10"
+                HorizontalAlignment="Center" />
+
+
+            <TextBlock 
+                Foreground="white"
+                Margin="10"
+                HorizontalAlignment="Center"
+                VerticalAlignment="Center"
+                FontSize="14"
+                Text="Password:" />
+            
+            <StackPanel Orientation="Horizontal">
+                <Image VerticalAlignment="Center" HorizontalAlignment="Center" Margin="20,0,0,0" Source="/Ressources/images/cadenas.png" Width="10" Height="10">
+                </Image>
+                <PasswordBox 
+                x:Name="PasswordBox"
+                Width="250"
+                Margin="20"
+                HorizontalAlignment="Center" />
+            </StackPanel>
+
+
+
+            <Button
+                x:Name="LoginButton"
+                Width="150"
+                Height="40"
+                Margin="25"
+                HorizontalAlignment="Center"
+                Background="#1B4F72"
+                Content="Login"
+                FontSize="16"
+                Foreground="White"
+                Click="LoginButton_Click"
+                />
+        </StackPanel>
+    </Grid>
+</Window>
