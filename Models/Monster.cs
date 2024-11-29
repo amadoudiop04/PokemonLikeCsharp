@@ -13,5 +13,6 @@ namespace PokemonLikeCsharp.Models
         public string? Name { get; set; }
         public int Health { get; set; }
         public List<Spell>? Spell { get; set; }
+        public ICollection<Player> Players { get; set; } = new List<Player>();
     }
 }

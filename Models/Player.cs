@@ -13,6 +13,6 @@ namespace PokemonLikeCsharp.Models
         public int LoginID {  get; set; }
         public Login? Login { get; set; }
 
-
+        public ICollection<Monster> Monsters { get; set; } = new List<Monster>();
     }
 }

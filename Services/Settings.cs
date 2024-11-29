@@ -5,7 +5,7 @@ using System.Windows;
 
 namespace PokemonLikeCsharp.Services
 {
-    internal class Settings
+    public class Settings
     {
         public static void InitializeAndTestDatabase()
         {

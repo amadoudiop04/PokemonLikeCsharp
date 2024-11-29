@@ -12,8 +12,6 @@ namespace PokemonLikeCsharp.Models
         public string? Name { get; set; }   
         public int Damage { get; set; }
         public string? Description { get; set; }
-
-        public int MonsterID { get; set; }
-        public Monster? Monster { get; set;}
+        public List<Monster>? Monster { get; set;}
     }
 }

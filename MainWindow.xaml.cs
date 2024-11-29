@@ -1,6 +1,7 @@
 ﻿using Microsoft.Identity.Client;
 using PokemonLikeCsharp.Models;
 using PokemonLikeCsharp.Services;
+using PokemonLikeCsharp.ViewModels;
 using System.Text;
 using System.Windows;
 using System.Windows.Controls;
@@ -56,8 +57,10 @@ namespace PokemonLikeCsharp
                         Console.WriteLine($"Mot de passe haché : {user.PasswordHash}");
                         Console.WriteLine("================================");
 
-                        // Naviguer vers la page d'accueil
-                        // Exemple : NavigationService.Navigate(new Uri("HomePage.xaml", UriKind.Relative));
+
+                        var monsterViewModels = new MonsterViewModels();
+                        monsterViewModels.Show();
+                        this.Close();
                     }
                     else
                     {
