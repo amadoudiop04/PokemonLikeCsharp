@@ -10,12 +10,18 @@
     <Compile Update="ViewModels\MonsterViewModels.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
+    <Compile Update="ViewModels\SpellViewModel.xaml.cs">
+      <SubType>Code</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <Page Update="MainWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
     <Page Update="ViewModels\MonsterViewModels.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="ViewModels\SpellViewModel.xaml">
       <SubType>Designer</SubType>
     </Page>
   </ItemGroup>

@@ -24,7 +24,7 @@ namespace PokemonLikeCsharp.ViewModels
     {
         public ObservableCollection<string> ImageUrls { get; set; }
         public ObservableCollection<Monster> Monsters { get; set; }
-        public Dictionary<string, string> MonsterImages { get; set; }
+        public Dictionary<string, string> MonsterImages { get; set; } //pas encore fonctionnelle
 
         public MonsterViewModels()
         {
@@ -60,6 +60,18 @@ namespace PokemonLikeCsharp.ViewModels
                 }
             }
 
+
+        }
+
+        private void NavigateToSpell(object sender, RoutedEventArgs e)
+        {
+            var spellViewModel = new SpellViewModel();
+            spellViewModel.Show();
+            this.Close();
+        }
+
+        private void NavigateToPage2(object sender, RoutedEventArgs e)
+        {
 
         }
     }

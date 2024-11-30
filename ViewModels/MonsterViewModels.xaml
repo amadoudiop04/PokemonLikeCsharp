@@ -14,8 +14,18 @@
 
 
     <Grid Background="black">
+
+
+        <StackPanel Margin="30" Orientation="Vertical" HorizontalAlignment="Right" VerticalAlignment="Bottom">
+            <Button Foreground="AliceBlue" Background="#0066b2" Height="20" Content="Spell" Width="100" Margin="5" Click="NavigateToSpell" />
+                <Button Foreground="AliceBlue" Background="Red" Height="20" Content="Combat" Width="100" Margin="5" Click="NavigateToPage2" />
+        </StackPanel>
+
+
+
+
         <Label
-            Margin="10"
+            Margin="20"
             HorizontalAlignment="Center"
             Content="Les Monstres disponibles"
             FontFamily="Comic Sans MS"
@@ -86,5 +96,8 @@
                 </DataTemplate>
             </ListView.ItemTemplate>
         </ListView>
+
+      
+        
     </Grid>
 </Window>
