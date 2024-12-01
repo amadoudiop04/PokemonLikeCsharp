@@ -10,7 +10,7 @@
     mc:Ignorable="d">
 
     <Grid Background="Black">
-        <Button Height="20" VerticalAlignment="Top" Margin="10" HorizontalAlignment="Left"  Width="100" Click="back">Retour</Button>
+        <Button Height="25" VerticalAlignment="Top" Margin="10" HorizontalAlignment="Left"  Width="100" Click="back">Retour</Button>
 
         <Label
             Margin="20"

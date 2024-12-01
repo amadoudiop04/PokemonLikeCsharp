@@ -23,7 +23,7 @@
             Orientation="Vertical">
             <Button
                 Width="100"
-                Height="20"
+                Height="25"
                 Margin="5"
                 Background="#0066b2"
                 Click="NavigateToSpell"
@@ -31,7 +31,7 @@
                 Foreground="AliceBlue" />
             <Button
                 Width="100"
-                Height="20"
+                Height="25"
                 Margin="5"
                 Background="Red"
                 Click="NavigateToPage2"
@@ -54,7 +54,7 @@
             Width="500"
             Height="250"
             Margin="10"
-            Background="Black"
+            Background="{DynamicResource MaterialDesignPaper}"
             ItemsSource="{Binding Monsters}">
             <ListView.ItemTemplate>
                 <DataTemplate>

@@ -9,11 +9,19 @@
     Height="450"
     mc:Ignorable="d">
     <Grid>
-        <Button Height="20" VerticalAlignment="Top" Margin="10" HorizontalAlignment="Left"  Width="100" Click="back">Retour</Button>
+        <Button
+            Width="100"
+            Height="25"
+            Margin="10"
+            HorizontalAlignment="Left"
+            VerticalAlignment="Top"
+            Click="back">
+            Retour
+        </Button>
         <Border
             x:Name="MonstreSelectioner"
             Width="250"
-            Height="115"
+            Height="120"
             Margin="20"
             Padding="5"
             HorizontalAlignment="Left"
@@ -61,7 +69,7 @@
         <Border
             x:Name="MonsterSelectionnerdeManierealeatoire"
             Width="250"
-            Height="115"
+            Height="120"
             Margin="50"
             Padding="5"
             HorizontalAlignment="Right"
@@ -106,13 +114,29 @@
             </StackPanel>
         </Border>
 
-        <TextBlock
+
+        <Border
+            x:Name="ScoreBoard"
+            Width="100"
+            Height="50"
             Margin="10"
             HorizontalAlignment="Center"
             VerticalAlignment="Top"
-            FontSize="16"
-            FontWeight="Bold"
-            Text="{Binding Score, StringFormat='Score : {0}'}" />
+            Background="White"
+            BorderBrush="#D3D3D3"
+            BorderThickness="1"
+            CornerRadius="10">
+            <TextBlock
+                Margin="10"
+                HorizontalAlignment="Center"
+                VerticalAlignment="Top"
+                FontSize="16"
+                FontWeight="Bold"
+                Text="{Binding Score, StringFormat='Score : {0}'}" />
+
+        </Border>
+
+
 
         <Button
             Width="70"
@@ -131,7 +155,7 @@
             </Button.Background>
         </Button>
         <Button
-            Width="70"
+            Width="90"
             Height="25"
             Margin="20"
             HorizontalAlignment="Right"

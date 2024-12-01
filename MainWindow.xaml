@@ -7,6 +7,7 @@
     Title="MainWindow"
     Width="800"
     Height="450"
+    Style="{StaticResource MaterialDesignWindow}"
     mc:Ignorable="d">
     <Grid Background="#12131c">
         <StackPanel
@@ -37,7 +38,9 @@
                 x:Name="UsernameBox"
                 Width="250"
                 Margin="0,0,0,10"
-                HorizontalAlignment="Center" />
+                HorizontalAlignment="Center"
+                Foreground="White"
+                />
 
 
             <TextBlock 
@@ -52,6 +55,7 @@
                 <Image VerticalAlignment="Center" HorizontalAlignment="Center" Margin="20,0,0,0" Source="C:\Users\AMADOU\GitHub\PokemonLikeCsharp\Ressources\images\cadenas.png" Width="10" Height="10">
                 </Image>
                 <PasswordBox 
+                    Foreground="White"
                 x:Name="PasswordBox"
                 Width="250"
                 Margin="20"
