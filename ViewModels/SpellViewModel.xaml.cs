@@ -67,5 +67,12 @@ namespace PokemonLikeCsharp.ViewModels
                 TrieOptionsLoad(selectedOption);
             }
         }
+
+        private void back(object sender, RoutedEventArgs e)
+        {
+            var Back = new MonsterViewModels();
+            Back.Show();
+            this.Close();
+        }
     }
 }

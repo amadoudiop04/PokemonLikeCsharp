@@ -1,66 +1,85 @@
-﻿using Microsoft.EntityFrameworkCore;
-using Newtonsoft.Json;
-using PokemonLikeCsharp.Models;
-using System;
+﻿using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.IO;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 using System.Windows;
-using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Shapes;
+using Microsoft.EntityFrameworkCore;
+using Newtonsoft.Json;
+using PokemonLikeCsharp.Models;
 
 namespace PokemonLikeCsharp.ViewModels
 {
-
     public partial class MonsterViewModels : Window
     {
-        public ObservableCollection<string> ImageUrls { get; set; }
-        public ObservableCollection<Monster> Monsters { get; set; }
-        public Dictionary<string, string> MonsterImages { get; set; } //pas encore fonctionnelle
+        public ObservableCollection<string> ImageUrls { get; set; } = new ObservableCollection<string>();
+        public ObservableCollection<Monster> Monsters { get; set; } = new ObservableCollection<Monster>();
+        public Dictionary<string, string> MonsterImages { get; set; } = new Dictionary<string, string>(); 
 
         public MonsterViewModels()
         {
             InitializeComponent();
             DataContext = this;
+           
 
-
-            using (var content = new PokemonContent())
+            try
             {
-                Monsters = new ObservableCollection<Monster>(content.Monster.Include(m => m.Spell).ToList());
+               
+                using (var context = new PokemonContent())
+                {
+                    Monsters = new ObservableCollection<Monster>(
+                        context.Monster.Include(m => m.Spell).ToList()
+                    );
+                }
 
+                
+                LoadMonstersFromJson();
             }
-
-            ImageUrls = new ObservableCollection<string>();
-            LoadMonstersFromJson();
-
+            catch (Exception ex)
+            {
+                MessageBox.Show($"An error occurred while loading data: {ex.Message}", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
+            }
         }
+
         private void LoadMonstersFromJson()
         {
-            string jsonFilePath = "C:\\Users\\AMADOU\\GitHub\\PokemonLikeCsharp\\Pokemon_urls.json"; // Assurez-vous que le fichier est accessible
+            string jsonFilePath = "C:\\Users\\AMADOU\\GitHub\\PokemonLikeCsharp\\Ressources\\Pokemon_url.json";
 
             if (File.Exists(jsonFilePath))
             {
-                string json = File.ReadAllText(jsonFilePath);
-
-                // Désérialiser le JSON en un objet
-                var data = JsonConvert.DeserializeObject<MonsterData>(json);
-
-                // Ajouter les URLs des images dans la collection ObservableCollection
-                foreach (var url in data.Monsters)
+                try
                 {
-                    ImageUrls.Add(url);
+                    string json = File.ReadAllText(jsonFilePath);
+
+                  
+                    var data = JsonConvert.DeserializeObject<MonsterData>(json);
+                    if (data != null)
+                    {
+                      
+                        foreach (var url in data.Monsters)
+                        {
+                            ImageUrls.Add(url);
+                        }
+                    }
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show($"Failed to load image URLs: {ex.Message}", "Error", MessageBoxButton.OK, MessageBoxImage.Error);
                 }
             }
+            else
+            {
+                MessageBox.Show($"JSON file not found at {jsonFilePath}.", "Error", MessageBoxButton.OK, MessageBoxImage.Warning);
+            }
+        }
 
-
+        
+        private void SetMonsterImage(string monsterName, string imageUrl)
+        {
+            if (!MonsterImages.ContainsKey(monsterName))
+            {
+                MonsterImages.Add(monsterName, imageUrl);
+            }
         }
 
         private void NavigateToSpell(object sender, RoutedEventArgs e)
@@ -72,7 +91,9 @@ namespace PokemonLikeCsharp.ViewModels
 
         private void NavigateToPage2(object sender, RoutedEventArgs e)
         {
-
+            var combatViewModel = new CombatViewModels();
+            combatViewModel.Show();
+            this.Close();
         }
     }
 }

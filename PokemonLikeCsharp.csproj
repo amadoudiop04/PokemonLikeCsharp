@@ -9,9 +9,24 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <None Remove="Pokemon_url.json" />
     <None Remove="Ressources\images\cadenas.png" />
+    <None Remove="Ressources\images\Feu.png" />
     <None Remove="Ressources\images\pokemon.jpg" />
     <None Remove="Ressources\images\profile.png" />
+    <None Remove="Ressources\images\Zonedecombat.png" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Resource Include="Ressources\Pokemon_url.json">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Ressources\images\Feu.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
+    <Resource Include="Ressources\images\Zonedecombat.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Resource>
   </ItemGroup>
 
   <ItemGroup>
