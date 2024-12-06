@@ -1,11 +1,14 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace PokemonLikeCsharp.Models
 {
     public class Monster : INotifyPropertyChanged
     {
+        [NotMapped]
+        public string? ImageUrl { get; set; } 
         public int ID { get; set; }
         public string? Name { get; set; }
 
@@ -28,7 +31,7 @@ namespace PokemonLikeCsharp.Models
         public List<Spell>? Spell { get; set; }
         public ICollection<Player> Players { get; set; } = new List<Player>();
 
-        public event PropertyChangedEventHandler PropertyChanged;
+        public event PropertyChangedEventHandler? PropertyChanged;
         protected void OnPropertyChanged(string propertyName)
         {
             PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));

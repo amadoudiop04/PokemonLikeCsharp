@@ -1,13 +1,43 @@
-﻿{
-  "DATA": [
-    "https://archives.bulbagarden.net/media/upload/2/27/0004Charmander.png",
-    "https://archives.bulbagarden.net/media/upload/5/54/0007Squirtle.png",
-    "https://archives.bulbagarden.net/media/upload/f/fb/0001Bulbasaur.png",
-    "https://archives.bulbagarden.net/media/upload/d/d6/0052Meowth.png",
-    "https://archives.bulbagarden.net/wiki/File:0025Pikachu.png",
-    "https://archives.bulbagarden.net/media/upload/3/3f/0054Psyduck.png",
-    "https://archives.bulbagarden.net/media/upload/0/02/0066Machop.png",
-    "https://archives.bulbagarden.net/media/upload/3/3f/0143Snorlax.png",
-    "https://archives.bulbagarden.net/media/upload/4/47/0094Gengar.png"
-  ]
-}
+﻿[
+  {
+    "Name": "Charmander",
+    "ImageUrl": "https://archives.bulbagarden.net/media/upload/2/27/0004Charmander.png"
+  },
+  {
+    "Name": "Squirtle",
+    "ImageUrl": "https://archives.bulbagarden.net/media/upload/5/54/0007Squirtle.png"
+  },
+  {
+    "Name": "Bulbasaur",
+    "ImageUrl": "https://archives.bulbagarden.net/media/upload/f/fb/0001Bulbasaur.png"
+  },
+
+  {
+    "Name": "Jigglypuff",
+    "ImageUrl": "https://www.media.pokekalos.fr/img/pokemon/home/rondoudou.png"
+  },
+  {
+    "Name": "Meowth",
+    "ImageUrl": "https://archives.bulbagarden.net/media/upload/d/d6/0052Meowth.png"
+  },
+  {
+    "Name": "Pikachu",
+    "ImageUrl": "https://www.pokepedia.fr/images/thumb/7/76/Pikachu-DEPS.png/800px-Pikachu-DEPS.png"
+  },
+  {
+    "Name": "Psyduck",
+    "ImageUrl": "https://archives.bulbagarden.net/media/upload/3/3f/0054Psyduck.png"
+  },
+  {
+    "Name": "Machop",
+    "ImageUrl": "https://archives.bulbagarden.net/media/upload/0/02/0066Machop.png"
+  },
+  {
+    "Name": "Snorlax",
+    "ImageUrl": "https://archives.bulbagarden.net/media/upload/3/3f/0143Snorlax.png"
+  },
+  {
+    "Name": "Gengar",
+    "ImageUrl": "https://archives.bulbagarden.net/media/upload/4/47/0094Gengar.png"
+  }  
+]

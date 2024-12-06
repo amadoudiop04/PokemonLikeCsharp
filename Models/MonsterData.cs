@@ -10,4 +10,7 @@ namespace PokemonLikeCsharp.Models
     {
         public List<string> Monsters { get; set; } = new List<string>();
     }
+
 }
+
+

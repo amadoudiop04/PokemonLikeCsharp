@@ -68,18 +68,10 @@
                         BorderThickness="1"
                         CornerRadius="10">
                         <StackPanel Orientation="Horizontal">
-                            <ItemsControl ItemsSource="{Binding ImageUrls}">
-                                <ItemsControl.ItemTemplate>
-                                    <DataTemplate>
-                                        <Image
-                                            Width="200"
-                                            Source="{Binding ImageUrls}"
-                                            Stretch="UniformToFill" />
-                                    </DataTemplate>
-                                </ItemsControl.ItemTemplate>
-                            </ItemsControl>
-
-
+                            <Image
+                                Width="200"
+                                Source="{Binding ImageUrl}"
+                                Stretch="UniformToFill" />
                             <StackPanel Margin="10,0">
                                 <TextBlock
                                     FontSize="16"

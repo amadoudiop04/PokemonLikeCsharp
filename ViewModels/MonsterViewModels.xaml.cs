@@ -12,19 +12,17 @@ namespace PokemonLikeCsharp.ViewModels
 {
     public partial class MonsterViewModels : Window
     {
-        public ObservableCollection<string> ImageUrls { get; set; } = new ObservableCollection<string>();
         public ObservableCollection<Monster> Monsters { get; set; } = new ObservableCollection<Monster>();
-        public Dictionary<string, string> MonsterImages { get; set; } = new Dictionary<string, string>(); 
+        public Dictionary<string, string> MonsterImages { get; set; } = new Dictionary<string, string>();
 
         public MonsterViewModels()
         {
             InitializeComponent();
             DataContext = this;
-           
 
             try
             {
-               
+
                 using (var context = new PokemonContent())
                 {
                     Monsters = new ObservableCollection<Monster>(
@@ -32,8 +30,8 @@ namespace PokemonLikeCsharp.ViewModels
                     );
                 }
 
-                
-                LoadMonstersFromJson();
+
+                LoadMonsterImagesFromJson();
             }
             catch (Exception ex)
             {
@@ -41,7 +39,8 @@ namespace PokemonLikeCsharp.ViewModels
             }
         }
 
-        private void LoadMonstersFromJson()
+
+        private void LoadMonsterImagesFromJson()
         {
             string jsonFilePath = "C:\\Users\\AMADOU\\GitHub\\PokemonLikeCsharp\\Ressources\\Pokemon_url.json";
 
@@ -51,14 +50,20 @@ namespace PokemonLikeCsharp.ViewModels
                 {
                     string json = File.ReadAllText(jsonFilePath);
 
-                  
-                    var data = JsonConvert.DeserializeObject<MonsterData>(json);
-                    if (data != null)
+                    var monstersFromJson = JsonConvert.DeserializeObject<List<Monster>>(json);
+
+                    if (monstersFromJson != null)
                     {
-                      
-                        foreach (var url in data.Monsters)
+                        foreach (var monster in Monsters)
                         {
-                            ImageUrls.Add(url);
+                            if (!MonsterImages.ContainsKey(monster.Name))
+                            {
+                                var matchingMonster = monstersFromJson.FirstOrDefault(m => m.Name == monster.Name);
+                                if (matchingMonster != null)
+                                {
+                                    monster.ImageUrl = matchingMonster.ImageUrl;
+                                }
+                            }
                         }
                     }
                 }
@@ -73,16 +78,8 @@ namespace PokemonLikeCsharp.ViewModels
             }
         }
 
-        
-        private void SetMonsterImage(string monsterName, string imageUrl)
-        {
-            if (!MonsterImages.ContainsKey(monsterName))
-            {
-                MonsterImages.Add(monsterName, imageUrl);
-            }
-        }
-
-        private void NavigateToSpell(object sender, RoutedEventArgs e)
+    
+  private void NavigateToSpell(object sender, RoutedEventArgs e)
         {
             var spellViewModel = new SpellViewModel();
             spellViewModel.Show();
@@ -95,5 +92,6 @@ namespace PokemonLikeCsharp.ViewModels
             combatViewModel.Show();
             this.Close();
         }
+
     }
 }
