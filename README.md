@@ -1,5 +1,5 @@
 ﻿# Project PokemonLike
-Welcome to PokemonLike
+**Welcome to PokemonLike**
 
 <img src="./Ressources\images\PokemonLikeProject1.png" with="800" />
 <img src="./Ressources\images\PokemonLikeProject.png" with="800" />
@@ -11,10 +11,10 @@ Somes knowledges in this field :
 
 - **The use of C#**
 
-- The use of SQL management, SQL(
-Structured Query Language), WPF and Microsoft Visual Studios
+- **The use of SQL management, SQL(
+Structured Query Language), WPF and Microsoft Visual Studios**
 
-- The use of Git and for the code management
+- **The use of Git and for the code management**
 
 # Installation🔧
 
@@ -42,4 +42,4 @@ NET 9
 
 # Auteurs 💸
 
-- [Amadou diop] (linkedin : https://www.linkedin.com/in/amadou-diop-3a5258316/?trk=opento_sprofile_details)
+- [Amadou diop ⚽💻] (linkedin : https://www.linkedin.com/in/amadou-diop-3a5258316/?trk=opento_sprofile_details)
