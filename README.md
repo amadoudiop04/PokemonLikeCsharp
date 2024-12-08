@@ -1,21 +1,20 @@
 ﻿# Project PokemonLike
 Welcome to PokemonLike
 
-![Texte alternatif](C:\Users\AMADOU\GitHub\PokemonLikeCsharp\Ressources\images\PokemonLikeProject1.png)
-![Texte alternatif](C:\Users\AMADOU\GitHub\PokemonLikeCsharp\Ressources\images\PokemonLikeProject.png)
-
+<img src="./Ressources\images\PokemonLikeProject1.png" with="800" />
+<img src="./Ressources\images\PokemonLikeProject.png" with="800" />
 
 the aim of this project is to develop a combat-based wpf application in c# using Windows Presentation Foundation (wpf), integrating an ergonomic user interface, sql server express database management to store game data and combat features.
 
 # Prerequisite⏪
 Somes knowledges in this field :
 
-The use of C#
+- **The use of C#**
 
-The use of SQL management, SQL(
+- The use of SQL management, SQL(
 Structured Query Language), WPF and Microsoft Visual Studios
 
-The use of Git and for the code management
+- The use of Git and for the code management
 
 # Installation🔧
 
@@ -42,6 +41,5 @@ Once you've selected your monster, you can simulate the fight by pressing the fl
 NET 9
 
 # Auteurs 💸
-Amadou diop 
 
-linkedin : https://www.linkedin.com/in/amadou-diop-3a5258316/?trk=opento_sprofile_details
+- [Amadou diop] (linkedin : https://www.linkedin.com/in/amadou-diop-3a5258316/?trk=opento_sprofile_details)
