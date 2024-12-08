@@ -22,6 +22,21 @@ namespace PokemonLikeCsharp.ViewModels
             }
         }
 
+        private Monster _selectedPlayerMonster;
+        public Monster SelectedPlayerMonster
+        {
+            get => _selectedPlayerMonster;
+            set
+            {
+                if (_selectedPlayerMonster != value)
+                {
+                    _selectedPlayerMonster = value;
+                    OnPropertyChanged(nameof(SelectedPlayerMonster));
+                    UpdatePlayerMonsterDetails();
+                }
+            }
+        }
+
         private ObservableCollection<Monster> _enemyMonsters;
         public ObservableCollection<Monster> EnemyMonsters
         {
@@ -56,6 +71,9 @@ namespace PokemonLikeCsharp.ViewModels
         {
             InitializeComponent();
             DataContext = this;
+
+            PlayerMonsters = new ObservableCollection<Monster>();
+            EnemyMonsters = new ObservableCollection<Monster>();
 
             LoadMonsters();
         }
@@ -97,6 +115,14 @@ namespace PokemonLikeCsharp.ViewModels
             }
         }
 
+        private void UpdatePlayerMonsterDetails()
+        {
+            if (SelectedPlayerMonster != null)
+            {
+                MessageBox.Show($"Monstre sélectionné : {SelectedPlayerMonster.Name}, HP : {SelectedPlayerMonster.Health}");
+            }
+        }
+
         private void Combat(object sender, RoutedEventArgs e)
         {
             if (EnemyMonsters == null || EnemyMonsters.Count == 0)
@@ -105,19 +131,17 @@ namespace PokemonLikeCsharp.ViewModels
                 return;
             }
 
-            if (PlayerMonsters == null || PlayerMonsters.Count == 0)
+            if (SelectedPlayerMonster == null)
             {
-                MessageBox.Show("Vous n'avez pas de monstre disponible !");
+                MessageBox.Show("Veuillez sélectionner un monstre !");
                 return;
             }
 
-            Monster playerMonster = PlayerMonsters.FirstOrDefault();
             Monster enemyMonster = EnemyMonsters.FirstOrDefault();
 
-            if (playerMonster == null || enemyMonster == null) return;
+            if (enemyMonster == null) return;
 
-            // Phase 1 : Attaque du joueur
-            Spell playerSpell = playerMonster.Spell.FirstOrDefault();
+            Spell playerSpell = SelectedPlayerMonster.Spell.FirstOrDefault();
             if (playerSpell != null)
             {
                 MessageBox.Show($"Le joueur attaque avec {playerSpell.Name}, infligeant {playerSpell.Damage} dégâts !");
@@ -132,17 +156,16 @@ namespace PokemonLikeCsharp.ViewModels
                 }
             }
 
-            // Phase 2 : Contre-attaque de l'ennemi
             Spell enemySpell = enemyMonster.Spell.FirstOrDefault();
             if (enemySpell != null)
             {
                 MessageBox.Show($"L'ennemi contre-attaque avec {enemySpell.Name}, infligeant {enemySpell.Damage} dégâts !");
-                playerMonster.Health -= enemySpell.Damage;
+                SelectedPlayerMonster.Health -= enemySpell.Damage;
 
-                if (playerMonster.Health <= 0)
+                if (SelectedPlayerMonster.Health <= 0)
                 {
-                    MessageBox.Show($"{playerMonster.Name} a été vaincu !");
-                    PlayerMonsters.Remove(playerMonster);
+                    MessageBox.Show($"{SelectedPlayerMonster.Name} a été vaincu !");
+                    PlayerMonsters.Remove(SelectedPlayerMonster);
 
                     if (PlayerMonsters.Count == 0)
                     {
@@ -167,15 +190,14 @@ namespace PokemonLikeCsharp.ViewModels
             }
 
             Score = 0;
-
-            MessageBox.Show(" Le combat peut recommencer !");
+            MessageBox.Show("Le combat peut recommencer !");
         }
 
-        private void back(object sender, RoutedEventArgs e)
+        private void Back(object sender, RoutedEventArgs e)
         {
             var back = new SpellViewModel();
-            back.Show();    
-            this.Close();   
+            back.Show();
+            Close();
         }
     }
 }

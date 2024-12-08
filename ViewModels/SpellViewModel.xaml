@@ -24,6 +24,7 @@
        
         <ComboBox
             x:Name="TrieComboBox"
+            Background="White"
             Width="120"
             Margin="20,70,20,0"
             VerticalAlignment="Top"

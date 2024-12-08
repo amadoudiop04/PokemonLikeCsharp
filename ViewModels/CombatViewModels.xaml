@@ -12,12 +12,23 @@
         <Button
             Width="100"
             Height="25"
-            Margin="10"
+            Margin="10,0,0,380"
             HorizontalAlignment="Left"
-            VerticalAlignment="Top"
-            Click="back">
+            VerticalAlignment="Bottom"
+            Click="Back">
             Retour
         </Button>
+
+        <ComboBox
+            x:Name="SelectedMonster"
+            Width="120"
+            Margin="20,70,20,0"
+            HorizontalAlignment="Left"
+            Background="White"
+            DisplayMemberPath="Name"
+            ItemsSource="{Binding PlayerMonsters}"
+            SelectedItem="{Binding SelectedPlayerMonster, Mode=TwoWay}" />
+
         <Border
             x:Name="MonstreSelectioner"
             Width="250"
@@ -31,40 +42,35 @@
             BorderThickness="1"
             CornerRadius="10">
             <StackPanel>
-                <ListView ItemsSource="{Binding PlayerMonsters}">
-                    <ListView.ItemTemplate>
+                <TextBlock
+                    FontSize="16"
+                    FontWeight="Bold"
+                    Text="{Binding SelectedPlayerMonster.Name}" />
+
+                <ItemsControl ItemsSource="{Binding SelectedPlayerMonster.Spell}">
+                    <ItemsControl.ItemTemplate>
                         <DataTemplate>
-                            <StackPanel Margin="5" Orientation="Vertical">
-                                <TextBlock
-                                    Margin="0,0,0,5"
-                                    FontSize="14"
-                                    FontWeight="Bold"
-                                    Text="{Binding Name}" />
-                                <ItemsControl ItemsSource="{Binding Spell}">
-                                    <ItemsControl.ItemTemplate>
-                                        <DataTemplate>
-                                            <StackPanel Orientation="Vertical">
-                                                <TextBlock FontWeight="DemiBold" Text="{Binding Name}" />
-                                                <TextBlock Margin="0,0,5,0" Text="Type d'attaque: " />
-                                                <TextBlock FontWeight="DemiBold" Text="{Binding Description}" />
-                                            </StackPanel>
-                                        </DataTemplate>
-                                    </ItemsControl.ItemTemplate>
-                                </ItemsControl>
-                                <StackPanel Orientation="Horizontal">
-                                    <TextBlock Margin="0,0,5,0" Text="HP: " />
-                                    <ProgressBar
-                                        Width="150"
-                                        Height="7"
-                                        Value="{Binding Health}" />
-                                    <Label VerticalAlignment="Center" Content="{Binding Health}" />
-                                </StackPanel>
+                            <StackPanel>
+                                <TextBlock FontWeight="Bold" Text="{Binding Name}" />
+                                <TextBlock Margin="0,0,5,0" Text="Type d'attaque : " />
+                                <TextBlock Text="{Binding Description}" />
                             </StackPanel>
                         </DataTemplate>
-                    </ListView.ItemTemplate>
-                </ListView>
+                    </ItemsControl.ItemTemplate>
+                </ItemsControl>
+
+                <StackPanel Orientation="Horizontal">
+                    <TextBlock Text="HP : " />
+                    <ProgressBar
+                        Width="150"
+                        Height="7"
+                        Value="{Binding SelectedPlayerMonster.Health}" />
+                    <TextBlock Text="{Binding SelectedPlayerMonster.Health}" />
+                </StackPanel>
             </StackPanel>
         </Border>
+
+
 
         <Border
             x:Name="MonsterSelectionnerdeManierealeatoire"
