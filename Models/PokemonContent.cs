@@ -1,9 +1,5 @@
 ﻿using Microsoft.EntityFrameworkCore;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+
 
 namespace PokemonLikeCsharp.Models
 {
@@ -17,6 +13,9 @@ namespace PokemonLikeCsharp.Models
         public DbSet<MonsterSpell> MonsterSpell { get; set; } = null!;
         public DbSet<PlayerMonster> PlayerMonster { get; set; } = null!;
 
+
+        //private readonly string _connectionstring;
+        
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             optionsBuilder.UseSqlServer("Server=localhost\\SQLEXPRESS;Database=ExerciceMonster;Trusted_Connection=True;TrustServerCertificate=True;");

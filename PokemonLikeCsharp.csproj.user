@@ -7,13 +7,13 @@
     </ApplicationDefinition>
   </ItemGroup>
   <ItemGroup>
-    <Compile Update="ViewModels\CombatViewModels.xaml.cs">
+    <Compile Update="Views\CombatViewModels.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="ViewModels\MonsterViewModels.xaml.cs">
+    <Compile Update="Views\MonsterViewModels.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
-    <Compile Update="ViewModels\SpellViewModel.xaml.cs">
+    <Compile Update="Views\SpellViewModel.xaml.cs">
       <SubType>Code</SubType>
     </Compile>
   </ItemGroup>
@@ -21,13 +21,13 @@
     <Page Update="LoginWindow.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="ViewModels\CombatViewModels.xaml">
+    <Page Update="Views\CombatViewModels.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="ViewModels\MonsterViewModels.xaml">
+    <Page Update="Views\MonsterViewModels.xaml">
       <SubType>Designer</SubType>
     </Page>
-    <Page Update="ViewModels\SpellViewModel.xaml">
+    <Page Update="Views\SpellViewModel.xaml">
       <SubType>Designer</SubType>
     </Page>
   </ItemGroup>

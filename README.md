@@ -26,6 +26,13 @@ git clone https://github.com/amadoudiop04/PokemonLikeCsharp.git
 
 Once the project has been cloned via Microsoft Visual Studio, you'll see a green button at the top of the page. Click on it to launch the program.
 
+Once the project has been launched, make sure that the URL to your database is in the following format:
+
+Data source=localhostSQLEXPRESS;Database=ExerciceMonster;Trusted_Connection=True;TrustServerCertificate=True;
+In particular, you can use the admin interface to log in with the following credentials or create an account:
+
+Username: admin
+Password: admin123
 
 # How Play ? 🔨
 
@@ -39,6 +46,7 @@ Once you've selected your monster, you can simulate the fight by pressing the fl
 
 # Version 🗃️
 NET 9
+SQL server management V20.1
 
 # Auteurs 💸
 

@@ -55,8 +55,9 @@
   </ItemGroup>
 
   <ItemGroup>
+    <Folder Include="ViewModels\" />
+    <Folder Include="Ressources\music\" />
     <Folder Include="Utils\" />
-    <Folder Include="Views\" />
   </ItemGroup>
 
   <ItemGroup>

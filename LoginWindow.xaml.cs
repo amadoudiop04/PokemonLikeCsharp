@@ -2,16 +2,10 @@
 using PokemonLikeCsharp.Models;
 using PokemonLikeCsharp.Services;
 using PokemonLikeCsharp.ViewModels;
-using System.Text;
+using System.Security.Policy;
 using System.Windows;
 using System.Windows.Controls;
-using System.Windows.Data;
-using System.Windows.Documents;
-using System.Windows.Input;
-using System.Windows.Media;
-using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
-using System.Windows.Shapes;
+
 
 namespace PokemonLikeCsharp
 {
@@ -31,11 +25,13 @@ namespace PokemonLikeCsharp
 
         private void LoginButton_Click(object sender, RoutedEventArgs e)
         {
+            //string Url = UrlBox.Text;
 
+            //string.IsNullOrWhiteSpace(Url) ||
             string username = UsernameBox.Text.Trim();
             string password = PasswordBox.Password;
 
-            if (string.IsNullOrWhiteSpace(username) || string.IsNullOrWhiteSpace(password))
+            if ( string.IsNullOrWhiteSpace(username) || string.IsNullOrWhiteSpace(password))
             {
                 MessageBox.Show("Veuillez remplir tous les champs.", "Erreur", MessageBoxButton.OK, MessageBoxImage.Warning);
                 return;
