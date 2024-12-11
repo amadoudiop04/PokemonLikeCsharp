@@ -5,6 +5,7 @@ using System.ComponentModel;
 using System.IO;
 using System.Linq;
 using System.Media;
+using System.Security.Policy;
 using System.Windows;
 
 namespace PokemonLikeCsharp.ViewModels
@@ -74,7 +75,6 @@ namespace PokemonLikeCsharp.ViewModels
             PlayMusic();
             PlayerMonsters = new ObservableCollection<Monster>();
             EnemyMonsters = new ObservableCollection<Monster>();
-
             LoadMonsters();
         }
 

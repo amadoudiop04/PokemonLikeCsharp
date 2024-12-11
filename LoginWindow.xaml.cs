@@ -16,7 +16,6 @@ namespace PokemonLikeCsharp
     {
         public LoginWindow()
         {
-            Settings.InitializeAndTestDatabase();
             InitializeComponent();
         }
 
@@ -25,13 +24,12 @@ namespace PokemonLikeCsharp
 
         private void LoginButton_Click(object sender, RoutedEventArgs e)
         {
-            //string Url = UrlBox.Text;
-
-            //string.IsNullOrWhiteSpace(Url) ||
+            Settings.InitializeAndTestDatabase();
+            string Url = UrlBox.Text.Trim();
             string username = UsernameBox.Text.Trim();
             string password = PasswordBox.Password;
 
-            if ( string.IsNullOrWhiteSpace(username) || string.IsNullOrWhiteSpace(password))
+            if (string.IsNullOrWhiteSpace(Url) || string.IsNullOrWhiteSpace(username) || string.IsNullOrWhiteSpace(password))
             {
                 MessageBox.Show("Veuillez remplir tous les champs.", "Erreur", MessageBoxButton.OK, MessageBoxImage.Warning);
                 return;
@@ -39,7 +37,7 @@ namespace PokemonLikeCsharp
 
             try
             {
-                using (var content = new PokemonContent())
+                using (var content = new PokemonContent(Url))
                 {
 
                     var user = content.Login.FirstOrDefault(u => u.Username == username);

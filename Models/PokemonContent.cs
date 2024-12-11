@@ -14,13 +14,21 @@ namespace PokemonLikeCsharp.Models
         public DbSet<PlayerMonster> PlayerMonster { get; set; } = null!;
 
 
-        //private readonly string _connectionstring;
-        
-        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        private readonly string _connectionstring;
+
+        public PokemonContent(string connectionstring)
         {
-            optionsBuilder.UseSqlServer("Server=localhost\\SQLEXPRESS;Database=ExerciceMonster;Trusted_Connection=True;TrustServerCertificate=True;");
+            _connectionstring = connectionstring;
         }
 
+        protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
+        {
+            optionsBuilder.UseSqlServer(_connectionstring);
+        }
+
+        public PokemonContent() : this("Server=localhost\\SQLEXPRESS;Database=ExerciceMonster;Trusted_Connection=True;TrustServerCertificate=True;")
+        {
+        }
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
