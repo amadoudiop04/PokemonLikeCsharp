@@ -52,8 +52,10 @@ Once you've selected your monster, you can simulate the fight by pressing the fl
 
 -SQL server management V20.2
 
-NB: si vous ne disposez pas de Base de données SQL server vous pouvais le creer en executant se script :
-  -- Cr�ation de la base de donn�es 
+NB: if you don't have a SQL server database you can create one by running this script:
+
+ -- Database creation 
+
 CREATE DATABASE ExerciceMonster; 
 GO 
 -- Utilisation de la base de donn�es 
@@ -108,7 +110,7 @@ FOREIGN KEY (MonsterID) REFERENCES Monster(ID),
 FOREIGN KEY (SpellID) REFERENCES Spell(ID) 
 );
 
--Puis inserer via des requetes SQL les données suivants :
+-Then insert the following data via SQL queries:
 
 -1.
 
