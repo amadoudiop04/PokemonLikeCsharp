@@ -2,6 +2,7 @@
 using PokemonLikeCsharp.Models;
 using PokemonLikeCsharp.Services;
 using PokemonLikeCsharp.ViewModels;
+using PokemonLikeCsharp.Views;
 using System.Security.Policy;
 using System.Windows;
 using System.Windows.Controls;
@@ -52,8 +53,8 @@ namespace PokemonLikeCsharp
                         Console.WriteLine("================================");
 
 
-                        var monsterViewModels = new MonsterViewModels();
-                        monsterViewModels.Show();
+                        var monsterView = new MonsterView();
+                        monsterView.Show();
                         this.Close();
                     }
                     else
