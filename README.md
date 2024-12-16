@@ -52,7 +52,11 @@ Once you've selected your monster, you can simulate the fight by pressing the fl
 
 -SQL server management V20.2
 
-NB: if you don't have a SQL server database you can create one by running this script:
+NB:
+
+Images are stored in a JSON file to avoid modifying the DB
+
+If you don't have a SQL server database you can create one by running this script:
 
  -- Database creation 
 
